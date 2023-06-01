@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+#root {
+  margin: 0 auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.page-example {
+}
+.page-block-header {
+}
+.page-block-article {
+  --box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  --box-radius: 10px;
+  height: 100vh;
+  display: flex;
+  .editor-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .quill {
+      flex: 1;
+    }
+  }
+  .ql-container.ql-snow {
+    border: none;
+  }
+  #quill-editor-toolbar {
+    border: none;
+    box-shadow: var(--box-shadow);
+    margin: 20px;
+    border-radius: var(--box-radius);
+  }
+}
+
+.page-block-content {
+  flex: 1;
+}
+.page-block-control {
+  width: 400px;
+  padding: 20px;
+  .replace-content-container {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--box-radius);
+    height: 100%;
+  }
+}
+.replace-content-container {
+  padding: 15px;
+  .replace-item {
+    box-shadow: var(--box-shadow);
+    border-radius: 3px;
+    margin-bottom: 15px;
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .data {
+      display: flex;
+      align-items: center;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      background-color: #eff3ff;
+    }
+    .origin {
+      margin-left: 5px;
+      color: #f00;
+      max-width: 80px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &.replace-type-delete {
+      .origin {
+        text-decoration: line-through;
+      }
+      .delete-text {
+        color: #f00;
+        margin-left: 3px;
+      }
+    }
+    .arrow {
+      margin: 0 8px;
+    }
+    .icon-arrow {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+    .text {
+      font-weight: bold;
+      max-width: 80px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.text-replace-item {
+  border-bottom: solid 2px #f00;
+  cursor: pointer;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+//减少动效媒体查询
+//https://www.cnblogs.com/xiaolantian/p/12701279.html
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
